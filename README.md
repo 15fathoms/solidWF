@@ -1,4 +1,4 @@
-# Solid Web Font
+# Icons Solid Web Font
 
 This is a web font build on the [Heroicons icons set](https://github.com/tailwindlabs/heroicons). It is a simple and clean icon set that is easy to use and customize.
 
