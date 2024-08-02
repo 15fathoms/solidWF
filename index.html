@@ -23,8 +23,10 @@
         }
 
         .auto-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
             gap: 1rem;
         }
 
@@ -33,7 +35,8 @@
             max-width: 80rem;
             margin: auto;
         }
-        .note{
+
+        .note {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -61,8 +64,11 @@
             align-items: center;
             overflow: hidden;
             cursor: pointer;
+            width: 100%;
+            max-width: 8rem;
         }
-        li:hover{
+
+        li:hover {
             background: #0d1117 !important;
         }
 
@@ -73,6 +79,24 @@
             overflow: visible !important;
             cursor: unset !important;
         }
+
+        input {
+            display: block;
+            margin-bottom: 2rem;
+            width: 320px;
+            padding: 0.5rem;
+            margin-inline: auto;
+            border: 1px solid #30363d;
+            background: #161b22;
+            color: white;
+            border-radius: .5rem;
+        }
+
+        input:focus {
+            appearance: none;
+            outline: none;
+            border: 1px solid #161b22;
+        }
     </style>
 </head>
 
@@ -80,6 +104,7 @@
     <header>
         <h1>Fathoms Solid Web Font</h1>
     </header>
+    <input type="search" name="search" id="search" placeholder="search an icon">
     <div id="icons-wrapper">
         <section>
             <ul class="auto-grid" id="iconContainer">
@@ -2022,8 +2047,24 @@
         </section>
     </div>
     <script>
+        let search = document.getElementById('search');
+        let list = document.querySelectorAll('li');
+
+        search.addEventListener('input', function (event) {
+            let value = event.target.value.toLowerCase();
+            list.forEach((element) => {
+                let classNameElement = element.querySelector('.js-classname');
+                let className = classNameElement.textContent || classNameElement.innerText;
+                if (className.toLowerCase().indexOf(value) > -1) {
+                    element.style.display = '';
+                } else {
+                    element.style.display = 'none';
+                }
+            });
+        });
+
         let iconContainer = document.getElementById('iconContainer');
-        document.querySelectorAll('li').forEach((element) => {
+        list.forEach((element) => {
             let copied = document.createElement('div');
             copied.classList.add('note');
             copied.textContent = 'Copied !';
