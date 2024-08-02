@@ -1,0 +1,412 @@
+$s-font-path: "../fonts" !default;
+
+@font-face {
+  font-family: 'Fathoms Solid';
+  src: url('#{$s-font-path}/Fathoms Solid.eot');
+  src: url('#{$s-font-path}/Fathoms Solid.eot') format('embedded-opentype'),
+       url('#{$s-font-path}/Fathoms Solid.woff2') format('woff2'),
+       url('#{$s-font-path}/Fathoms Solid.woff') format('woff'),
+       url('#{$s-font-path}/Fathoms Solid.ttf') format('truetype'),
+       url('#{$s-font-path}/Fathoms Solid.svg') format('svg');
+}
+
+/* base class */
+.icon {
+  display: inline-block;
+  font: normal normal normal 1em/1 'Fathoms Solid';
+  color: inherit;
+  flex-shrink: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* size examples - relative units */
+.icon-sm {
+  font-size: 0.8em;
+}
+
+.icon-lg {
+  font-size: 1.2em;
+}
+
+/* size examples - absolute units */
+.icon-16 {
+  font-size: 16px;
+}
+
+.icon-32 {
+  font-size: 32px;
+}
+
+/* rotate the icon infinitely */
+.icon-is-spinning {
+  animation: icon-spin 1s infinite linear;
+}
+
+@keyframes icon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* transform */
+.icon-rotate-90  {
+	transform: rotate(90deg);
+}
+
+.icon-rotate-180 {
+	transform: rotate(180deg);
+}
+
+.icon-rotate-270 {
+	transform: rotate(270deg);
+}
+
+.icon-flip-y {
+	transform: scaleY(-1);
+}
+
+.icon-flip-x {
+	transform: scaleX(-1);
+}
+
+/* icons */
+$icons: (
+  'academic-cap': 'ea01',
+  'adjustments-horizontal': 'ea02',
+  'adjustments-vertical': 'ea03',
+  'archive-box': 'ea04',
+  'archive-box-arrow-down': 'ea05',
+  'archive-box-x-mark': 'ea06',
+  'arrow-down': 'ea07',
+  'arrow-down-circle': 'ea08',
+  'arrow-down-left': 'ea09',
+  'arrow-down-on-square': 'ea0a',
+  'arrow-down-on-square-stack': 'ea0b',
+  'arrow-down-right': 'ea0c',
+  'arrow-down-tray': 'ea0d',
+  'arrow-left': 'ea0e',
+  'arrow-left-circle': 'ea0f',
+  'arrow-left-end-on-rectangle': 'ea10',
+  'arrow-left-on-rectangle': 'ea11',
+  'arrow-left-start-on-rectangle': 'ea12',
+  'arrow-long-down': 'ea13',
+  'arrow-long-left': 'ea14',
+  'arrow-long-right': 'ea15',
+  'arrow-long-up': 'ea16',
+  'arrow-path': 'ea17',
+  'arrow-path-rounded-square': 'ea18',
+  'arrow-right': 'ea19',
+  'arrow-right-circle': 'ea1a',
+  'arrow-right-end-on-rectangle': 'ea1b',
+  'arrow-right-on-rectangle': 'ea1c',
+  'arrow-right-start-on-rectangle': 'ea1d',
+  'arrow-small-down': 'ea1e',
+  'arrow-small-left': 'ea1f',
+  'arrow-small-right': 'ea20',
+  'arrow-small-up': 'ea21',
+  'arrow-top-right-on-square': 'ea22',
+  'arrow-trending-down': 'ea23',
+  'arrow-trending-up': 'ea24',
+  'arrow-turn-down-left': 'ea25',
+  'arrow-turn-down-right': 'ea26',
+  'arrow-turn-left-down': 'ea27',
+  'arrow-turn-left-up': 'ea28',
+  'arrow-turn-right-down': 'ea29',
+  'arrow-turn-right-up': 'ea2a',
+  'arrow-turn-up-left': 'ea2b',
+  'arrow-turn-up-right': 'ea2c',
+  'arrow-up': 'ea2d',
+  'arrow-up-circle': 'ea2e',
+  'arrow-up-left': 'ea2f',
+  'arrow-up-on-square': 'ea30',
+  'arrow-up-on-square-stack': 'ea31',
+  'arrow-up-right': 'ea32',
+  'arrow-up-tray': 'ea33',
+  'arrow-uturn-down': 'ea34',
+  'arrow-uturn-left': 'ea35',
+  'arrow-uturn-right': 'ea36',
+  'arrow-uturn-up': 'ea37',
+  'arrows-pointing-in': 'ea38',
+  'arrows-pointing-out': 'ea39',
+  'arrows-right-left': 'ea3a',
+  'arrows-up-down': 'ea3b',
+  'at-symbol': 'ea3c',
+  'backspace': 'ea3d',
+  'backward': 'ea3e',
+  'banknotes': 'ea3f',
+  'bars-2': 'ea40',
+  'bars-3': 'ea41',
+  'bars-3-bottom-left': 'ea42',
+  'bars-3-bottom-right': 'ea43',
+  'bars-3-center-left': 'ea44',
+  'bars-4': 'ea45',
+  'bars-arrow-down': 'ea46',
+  'bars-arrow-up': 'ea47',
+  'battery-0': 'ea48',
+  'battery-100': 'ea49',
+  'battery-50': 'ea4a',
+  'beaker': 'ea4b',
+  'bell': 'ea4c',
+  'bell-alert': 'ea4d',
+  'bell-slash': 'ea4e',
+  'bell-snooze': 'ea4f',
+  'bold': 'ea50',
+  'bolt': 'ea51',
+  'bolt-slash': 'ea52',
+  'book-open': 'ea53',
+  'bookmark': 'ea54',
+  'bookmark-slash': 'ea55',
+  'bookmark-square': 'ea56',
+  'briefcase': 'ea57',
+  'bug-ant': 'ea58',
+  'building-library': 'ea59',
+  'building-office': 'ea5a',
+  'building-office-2': 'ea5b',
+  'building-storefront': 'ea5c',
+  'cake': 'ea5d',
+  'calculator': 'ea5e',
+  'calendar': 'ea5f',
+  'calendar-date-range': 'ea60',
+  'calendar-days': 'ea61',
+  'camera': 'ea62',
+  'chart-bar': 'ea63',
+  'chart-bar-square': 'ea64',
+  'chart-pie': 'ea65',
+  'chat-bubble-bottom-center': 'ea66',
+  'chat-bubble-bottom-center-text': 'ea67',
+  'chat-bubble-left': 'ea68',
+  'chat-bubble-left-ellipsis': 'ea69',
+  'chat-bubble-left-right': 'ea6a',
+  'chat-bubble-oval-left': 'ea6b',
+  'chat-bubble-oval-left-ellipsis': 'ea6c',
+  'check': 'ea6d',
+  'check-badge': 'ea6e',
+  'check-circle': 'ea6f',
+  'chevron-double-down': 'ea70',
+  'chevron-double-left': 'ea71',
+  'chevron-double-right': 'ea72',
+  'chevron-double-up': 'ea73',
+  'chevron-down': 'ea74',
+  'chevron-left': 'ea75',
+  'chevron-right': 'ea76',
+  'chevron-up': 'ea77',
+  'chevron-up-down': 'ea78',
+  'circle-stack': 'ea79',
+  'clipboard': 'ea7a',
+  'clipboard-document': 'ea7b',
+  'clipboard-document-check': 'ea7c',
+  'clipboard-document-list': 'ea7d',
+  'clock': 'ea7e',
+  'cloud': 'ea7f',
+  'cloud-arrow-down': 'ea80',
+  'cloud-arrow-up': 'ea81',
+  'code-bracket': 'ea82',
+  'code-bracket-square': 'ea83',
+  'cog': 'ea84',
+  'cog-6-tooth': 'ea85',
+  'cog-8-tooth': 'ea86',
+  'command-line': 'ea87',
+  'computer-desktop': 'ea88',
+  'cpu-chip': 'ea89',
+  'credit-card': 'ea8a',
+  'cube': 'ea8b',
+  'cube-transparent': 'ea8c',
+  'currency-bangladeshi': 'ea8d',
+  'currency-dollar': 'ea8e',
+  'currency-euro': 'ea8f',
+  'currency-pound': 'ea90',
+  'currency-rupee': 'ea91',
+  'currency-yen': 'ea92',
+  'cursor-arrow-rays': 'ea93',
+  'cursor-arrow-ripple': 'ea94',
+  'device-phone-mobile': 'ea95',
+  'device-tablet': 'ea96',
+  'divide': 'ea97',
+  'document': 'ea98',
+  'document-arrow-down': 'ea99',
+  'document-arrow-up': 'ea9a',
+  'document-chart-bar': 'ea9b',
+  'document-check': 'ea9c',
+  'document-currency-bangladeshi': 'ea9d',
+  'document-currency-dollar': 'ea9e',
+  'document-currency-euro': 'ea9f',
+  'document-currency-pound': 'eaa0',
+  'document-currency-rupee': 'eaa1',
+  'document-currency-yen': 'eaa2',
+  'document-duplicate': 'eaa3',
+  'document-magnifying-glass': 'eaa4',
+  'document-minus': 'eaa5',
+  'document-plus': 'eaa6',
+  'document-text': 'eaa7',
+  'ellipsis-horizontal': 'eaa8',
+  'ellipsis-horizontal-circle': 'eaa9',
+  'ellipsis-vertical': 'eaaa',
+  'envelope': 'eaab',
+  'envelope-open': 'eaac',
+  'equals': 'eaad',
+  'exclamation-circle': 'eaae',
+  'exclamation-triangle': 'eaaf',
+  'eye': 'eab0',
+  'eye-dropper': 'eab1',
+  'eye-slash': 'eab2',
+  'face-frown': 'eab3',
+  'face-smile': 'eab4',
+  'film': 'eab5',
+  'finger-print': 'eab6',
+  'fire': 'eab7',
+  'flag': 'eab8',
+  'folder': 'eab9',
+  'folder-arrow-down': 'eaba',
+  'folder-minus': 'eabb',
+  'folder-open': 'eabc',
+  'folder-plus': 'eabd',
+  'forward': 'eabe',
+  'funnel': 'eabf',
+  'gif': 'eac0',
+  'gift': 'eac1',
+  'gift-top': 'eac2',
+  'globe-alt': 'eac3',
+  'globe-americas': 'eac4',
+  'globe-asia-australia': 'eac5',
+  'globe-europe-africa': 'eac6',
+  'h1': 'eac7',
+  'h2': 'eac8',
+  'h3': 'eac9',
+  'hand-raised': 'eaca',
+  'hand-thumb-down': 'eacb',
+  'hand-thumb-up': 'eacc',
+  'hashtag': 'eacd',
+  'heart': 'eace',
+  'home': 'eacf',
+  'home-modern': 'ead0',
+  'identification': 'ead1',
+  'inbox': 'ead2',
+  'inbox-arrow-down': 'ead3',
+  'inbox-stack': 'ead4',
+  'information-circle': 'ead5',
+  'italic': 'ead6',
+  'key': 'ead7',
+  'language': 'ead8',
+  'lifebuoy': 'ead9',
+  'light-bulb': 'eada',
+  'link': 'eadb',
+  'link-slash': 'eadc',
+  'list-bullet': 'eadd',
+  'lock-closed': 'eade',
+  'lock-open': 'eadf',
+  'magnifying-glass': 'eae0',
+  'magnifying-glass-circle': 'eae1',
+  'magnifying-glass-minus': 'eae2',
+  'magnifying-glass-plus': 'eae3',
+  'map': 'eae4',
+  'map-pin': 'eae5',
+  'megaphone': 'eae6',
+  'microphone': 'eae7',
+  'minus': 'eae8',
+  'minus-circle': 'eae9',
+  'minus-small': 'eaea',
+  'moon': 'eaeb',
+  'musical-note': 'eaec',
+  'newspaper': 'eaed',
+  'no-symbol': 'eaee',
+  'numbered-list': 'eaef',
+  'paint-brush': 'eaf0',
+  'paper-airplane': 'eaf1',
+  'paper-clip': 'eaf2',
+  'pause': 'eaf3',
+  'pause-circle': 'eaf4',
+  'pencil': 'eaf5',
+  'pencil-square': 'eaf6',
+  'percent-badge': 'eaf7',
+  'phone': 'eaf8',
+  'phone-arrow-down-left': 'eaf9',
+  'phone-arrow-up-right': 'eafa',
+  'phone-x-mark': 'eafb',
+  'photo': 'eafc',
+  'play': 'eafd',
+  'play-circle': 'eafe',
+  'play-pause': 'eaff',
+  'plus': 'eb00',
+  'plus-circle': 'eb01',
+  'plus-small': 'eb02',
+  'power': 'eb03',
+  'presentation-chart-bar': 'eb04',
+  'presentation-chart-line': 'eb05',
+  'printer': 'eb06',
+  'puzzle-piece': 'eb07',
+  'qr-code': 'eb08',
+  'question-mark-circle': 'eb09',
+  'queue-list': 'eb0a',
+  'radio': 'eb0b',
+  'receipt-percent': 'eb0c',
+  'receipt-refund': 'eb0d',
+  'rectangle-group': 'eb0e',
+  'rectangle-stack': 'eb0f',
+  'rocket-launch': 'eb10',
+  'rss': 'eb11',
+  'scale': 'eb12',
+  'scissors': 'eb13',
+  'server': 'eb14',
+  'server-stack': 'eb15',
+  'share': 'eb16',
+  'shield-check': 'eb17',
+  'shield-exclamation': 'eb18',
+  'shopping-bag': 'eb19',
+  'shopping-cart': 'eb1a',
+  'signal': 'eb1b',
+  'signal-slash': 'eb1c',
+  'slash': 'eb1d',
+  'sparkles': 'eb1e',
+  'speaker-wave': 'eb1f',
+  'speaker-x-mark': 'eb20',
+  'square-2-stack': 'eb21',
+  'square-3-stack-3d': 'eb22',
+  'squares-2x2': 'eb23',
+  'squares-plus': 'eb24',
+  'star': 'eb25',
+  'stop': 'eb26',
+  'stop-circle': 'eb27',
+  'strikethrough': 'eb28',
+  'sun': 'eb29',
+  'swatch': 'eb2a',
+  'table-cells': 'eb2b',
+  'tag': 'eb2c',
+  'ticket': 'eb2d',
+  'trash': 'eb2e',
+  'trophy': 'eb2f',
+  'truck': 'eb30',
+  'tv': 'eb31',
+  'underline': 'eb32',
+  'user': 'eb33',
+  'user-circle': 'eb34',
+  'user-group': 'eb35',
+  'user-minus': 'eb36',
+  'user-plus': 'eb37',
+  'users': 'eb38',
+  'variable': 'eb39',
+  'video-camera': 'eb3a',
+  'video-camera-slash': 'eb3b',
+  'view-columns': 'eb3c',
+  'viewfinder-circle': 'eb3d',
+  'wallet': 'eb3e',
+  'wifi': 'eb3f',
+  'window': 'eb40',
+  'wrench': 'eb41',
+  'wrench-screwdriver': 'eb42',
+  'x-circle': 'eb43',
+  'x-mark': 'eb44',
+);
+
+@function unicode($str) {
+  @return unquote("\"\\#{$str}\"");
+}
+
+@each $name, $code in $icons {
+  .s-#{""+$name}::before {
+    content: unicode($code);
+  }
+}
