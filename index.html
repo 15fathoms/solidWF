@@ -33,15 +33,37 @@
             max-width: 80rem;
             margin: auto;
         }
+        .note{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin-top: -200%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px) saturate(180%);
+            transition: all 0.3s;
+        }
+
+        .copied .note {
+            margin-top: 0;
+        }
 
         li {
             display: flex;
+            position: relative;
             flex-direction: column;
             aspect-ratio: 1/1;
             background: #161b22;
             border: 1px solid #30363d;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        li:hover{
+            background: #0d1117 !important;
         }
 
         li p {
@@ -60,7 +82,7 @@
     </header>
     <div id="icons-wrapper">
         <section>
-            <ul class="auto-grid">
+            <ul class="auto-grid" id="iconContainer">
                 <li>
                     <i class="icon s-academic-cap"></i>
                     <p class="js-classname">s-academic-cap</p>
@@ -1999,6 +2021,33 @@
             </ul>
         </section>
     </div>
+    <script>
+        let iconContainer = document.getElementById('iconContainer');
+        document.querySelectorAll('li').forEach((element) => {
+            let copied = document.createElement('div');
+            copied.classList.add('note');
+            copied.textContent = 'Copied !';
+            element.appendChild(copied);
+        });
+
+        iconContainer.addEventListener('click', function (event) {
+            let targetElement = event.target.closest('li');
+            if (targetElement) {
+                let classNameElement = targetElement.querySelector('.js-classname');
+                let className = classNameElement.textContent || classNameElement.innerText;
+                navigator.clipboard.writeText(`icon ` + className)
+                    .then(() => {
+                        targetElement.classList.add('copied');
+                        setTimeout(() => {
+                            targetElement.classList.remove('copied');
+                        }, 1000);
+                    })
+                    .catch(err => {
+                        console.error('Erreur lors de la copie: ', err);
+                    });
+            }
+        });
+    </script>
 </body>
 
 </html>
